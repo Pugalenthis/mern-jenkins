@@ -3,7 +3,7 @@ import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 dotenv.config();
 import cors from "cors";
-import { moviesRouter } from "./routes/movies.js";
+import { data } from "./helper.js";
 
 const app = express();
 
@@ -13,7 +13,13 @@ app.use(express.json());
 
 app.use(cors());
 
-app.use("/movies", moviesRouter);
+const PORT = process.env.PORT;
+
+app.listen(PORT, () => console.log(`server is started in ${PORT}`));
+
+app.get("/", async (req, res) => {
+  res.send(data);
+});
 
 // const MONGO_URL = "mongodb://localhost";
 
@@ -21,7 +27,3 @@ app.use("/movies", moviesRouter);
 
 // find gives cursor - cursor means  pagination
 //to convert into array we have toArray (method) to array gives everything.
-
-const PORT = process.env.PORT;
-
-app.listen(PORT, () => console.log(`server is started in ${PORT}`));
