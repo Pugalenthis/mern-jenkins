@@ -9,8 +9,6 @@ const app = express();
 
 //middleware --> intercept --> converting body to json
 
-app.use(express.json());
-
 app.use(cors());
 
 const PORT = process.env.PORT;
