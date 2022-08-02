@@ -17,17 +17,6 @@ app.use("/movies", moviesRouter);
 
 // const MONGO_URL = "mongodb://localhost";
 
-const MONGO_URL = process.env.MONGO_URL;
-
-async function createConnection() {
-  const client = new MongoClient(MONGO_URL);
-  await client.connect();
-  console.log("Mongo is connected");
-  return client;
-}
-
-export const client = await createConnection();
-
 //GET METHOD  - read
 
 // find gives cursor - cursor means  pagination
