@@ -9,7 +9,7 @@ const app = express();
 
 //middleware --> intercept --> converting body to json
 
-app.use(cors())
+app.use(cors("http://43.205.112.163:3000/"))
 
 const PORT = process.env.PORT;
 
