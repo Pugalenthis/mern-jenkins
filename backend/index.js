@@ -33,10 +33,6 @@ export const client = await createConnection();
 // find gives cursor - cursor means  pagination
 //to convert into array we have toArray (method) to array gives everything.
 
-app.get("/", function (req, res) {
-  res.send("Hello Pugalenthi💥❤");
-});
-
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => console.log(`server is started in ${PORT}`));
