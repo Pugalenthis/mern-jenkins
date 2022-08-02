@@ -17,7 +17,7 @@ const PORT = process.env.PORT;
 
 app.listen(PORT, () => console.log(`server is started in ${PORT}`));
 
-app.get("/", async (req, res) => {
+app.get("/", cors(), async (req, res) => {
   res.send(data);
 });
 
