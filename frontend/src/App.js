@@ -8,7 +8,7 @@ function App() {
   const [copymovie, SetMovies] = useState("");
 
   const getmovies = (movieid) => {
-    fetch(`${API}movies`, { method: "GET" })
+    fetch(`${API}`, { method: "GET" })
       .then((data) => data.json())
       .then((res) => SetMovies(res));
   };
